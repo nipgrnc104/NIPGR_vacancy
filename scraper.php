@@ -12,7 +12,7 @@ require 'scraperwiki/simple_html_dom.php';
 $dom = new simple_html_dom();
 $dom->load($html);
 //print_r($dom->find("table.list"));
-$title=$dom->find(table[@id=container_middle] tr td[1]);
+$title<-$dom->find(table[@id=container_middle] tr td[1]);
   print_r $title;
 
 
