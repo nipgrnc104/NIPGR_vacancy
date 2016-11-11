@@ -3,15 +3,20 @@
 // including some code snippets below that you should find helpful
 
 // require 'scraperwiki.php';
-// require 'scraperwiki/simple_html_dom.php';
+require 'scraperwiki/simple_html_dom.php';
 //
 // // Read in a page
-// $html = scraperwiki::scrape("http://foo.com");
+ $html = scraperwiki::scrape("http://www.nipgr.res.in/careers/vacancies_latest.php");
 //
 // // Find something on the page using css selectors
-// $dom = new simple_html_dom();
-// $dom->load($html);
-// print_r($dom->find("table.list"));
+$dom = new simple_html_dom();
+$dom->load($html);
+//print_r($dom->find("table.list"));
+$title=$dom->find(table[@id=container_middle] tr td[1]);
+  print_r $title;
+
+
+
 //
 // // Write out to the sqlite database using scraperwiki library
 // scraperwiki::save_sqlite(array('name'), array('name' => 'susan', 'occupation' => 'software developer'));
